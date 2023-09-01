@@ -12,5 +12,8 @@ class MyColors{
   static const Color lightYellowColor = Color(0xffF0F2AC);
   static const Color darkBlueColor = Color(0xff11324D);
   static const Color lighcolor = Color(0xff4BAEA0);
+  static const Color skyLightColor = Color(0xffE3F4F4);
+  static const Color lightPurpleColor = Color(0xffDCD6F7);
+
 
 }

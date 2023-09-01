@@ -8,7 +8,7 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i6;
+import 'package:auto_route/auto_route.dart' as _i7;
 import 'package:cleanarchi/presentation/screens/auth/widgets/auth_imports.dart'
     as _i1;
 import 'package:cleanarchi/presentation/screens/DashBoard/dashboard_imports.dart'
@@ -19,15 +19,17 @@ import 'package:cleanarchi/presentation/screens/splash/splash_import.dart'
     as _i4;
 import 'package:cleanarchi/presentation/screens/sqlLite/sql_imports.dart'
     as _i5;
-import 'package:flutter/cupertino.dart' as _i7;
+import 'package:cleanarchi/presentation/screens/voiceAsistant/voice_imports.dart'
+    as _i6;
+import 'package:flutter/cupertino.dart' as _i8;
 
-abstract class $AppRouter extends _i6.RootStackRouter {
+abstract class $AppRouter extends _i7.RootStackRouter {
   $AppRouter({super.navigatorKey});
 
   @override
-  final Map<String, _i6.PageFactory> pagesMap = {
+  final Map<String, _i7.PageFactory> pagesMap = {
     AuthRoute.name: (routeData) {
-      return _i6.AutoRoutePage<dynamic>(
+      return _i7.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i1.Auth(),
       );
@@ -35,7 +37,7 @@ abstract class $AppRouter extends _i6.RootStackRouter {
     DashBoardRoute.name: (routeData) {
       final args = routeData.argsAs<DashBoardRouteArgs>(
           orElse: () => const DashBoardRouteArgs());
-      return _i6.AutoRoutePage<dynamic>(
+      return _i7.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i2.DashBoard(
           key: args.key,
@@ -44,21 +46,27 @@ abstract class $AppRouter extends _i6.RootStackRouter {
       );
     },
     OnBoardRoute.name: (routeData) {
-      return _i6.AutoRoutePage<dynamic>(
+      return _i7.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i3.OnBoard(),
       );
     },
     SplashRoute.name: (routeData) {
-      return _i6.AutoRoutePage<dynamic>(
+      return _i7.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i4.Splash(),
       );
     },
     SqlScreenRoute.name: (routeData) {
-      return _i6.AutoRoutePage<dynamic>(
+      return _i7.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const _i5.sqlScreen(),
+      );
+    },
+    VoiceAIRoute.name: (routeData) {
+      return _i7.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i6.VoiceAI(),
       );
     },
   };
@@ -66,8 +74,8 @@ abstract class $AppRouter extends _i6.RootStackRouter {
 
 /// generated route for
 /// [_i1.Auth]
-class AuthRoute extends _i6.PageRouteInfo<void> {
-  const AuthRoute({List<_i6.PageRouteInfo>? children})
+class AuthRoute extends _i7.PageRouteInfo<void> {
+  const AuthRoute({List<_i7.PageRouteInfo>? children})
       : super(
           AuthRoute.name,
           initialChildren: children,
@@ -75,16 +83,16 @@ class AuthRoute extends _i6.PageRouteInfo<void> {
 
   static const String name = 'AuthRoute';
 
-  static const _i6.PageInfo<void> page = _i6.PageInfo<void>(name);
+  static const _i7.PageInfo<void> page = _i7.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i2.DashBoard]
-class DashBoardRoute extends _i6.PageRouteInfo<DashBoardRouteArgs> {
+class DashBoardRoute extends _i7.PageRouteInfo<DashBoardRouteArgs> {
   DashBoardRoute({
-    _i7.Key? key,
+    _i8.Key? key,
     dynamic id,
-    List<_i6.PageRouteInfo>? children,
+    List<_i7.PageRouteInfo>? children,
   }) : super(
           DashBoardRoute.name,
           args: DashBoardRouteArgs(
@@ -96,8 +104,8 @@ class DashBoardRoute extends _i6.PageRouteInfo<DashBoardRouteArgs> {
 
   static const String name = 'DashBoardRoute';
 
-  static const _i6.PageInfo<DashBoardRouteArgs> page =
-      _i6.PageInfo<DashBoardRouteArgs>(name);
+  static const _i7.PageInfo<DashBoardRouteArgs> page =
+      _i7.PageInfo<DashBoardRouteArgs>(name);
 }
 
 class DashBoardRouteArgs {
@@ -106,7 +114,7 @@ class DashBoardRouteArgs {
     this.id,
   });
 
-  final _i7.Key? key;
+  final _i8.Key? key;
 
   final dynamic id;
 
@@ -118,8 +126,8 @@ class DashBoardRouteArgs {
 
 /// generated route for
 /// [_i3.OnBoard]
-class OnBoardRoute extends _i6.PageRouteInfo<void> {
-  const OnBoardRoute({List<_i6.PageRouteInfo>? children})
+class OnBoardRoute extends _i7.PageRouteInfo<void> {
+  const OnBoardRoute({List<_i7.PageRouteInfo>? children})
       : super(
           OnBoardRoute.name,
           initialChildren: children,
@@ -127,13 +135,13 @@ class OnBoardRoute extends _i6.PageRouteInfo<void> {
 
   static const String name = 'OnBoardRoute';
 
-  static const _i6.PageInfo<void> page = _i6.PageInfo<void>(name);
+  static const _i7.PageInfo<void> page = _i7.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i4.Splash]
-class SplashRoute extends _i6.PageRouteInfo<void> {
-  const SplashRoute({List<_i6.PageRouteInfo>? children})
+class SplashRoute extends _i7.PageRouteInfo<void> {
+  const SplashRoute({List<_i7.PageRouteInfo>? children})
       : super(
           SplashRoute.name,
           initialChildren: children,
@@ -141,13 +149,13 @@ class SplashRoute extends _i6.PageRouteInfo<void> {
 
   static const String name = 'SplashRoute';
 
-  static const _i6.PageInfo<void> page = _i6.PageInfo<void>(name);
+  static const _i7.PageInfo<void> page = _i7.PageInfo<void>(name);
 }
 
 /// generated route for
 /// [_i5.sqlScreen]
-class SqlScreenRoute extends _i6.PageRouteInfo<void> {
-  const SqlScreenRoute({List<_i6.PageRouteInfo>? children})
+class SqlScreenRoute extends _i7.PageRouteInfo<void> {
+  const SqlScreenRoute({List<_i7.PageRouteInfo>? children})
       : super(
           SqlScreenRoute.name,
           initialChildren: children,
@@ -155,5 +163,19 @@ class SqlScreenRoute extends _i6.PageRouteInfo<void> {
 
   static const String name = 'SqlScreenRoute';
 
-  static const _i6.PageInfo<void> page = _i6.PageInfo<void>(name);
+  static const _i7.PageInfo<void> page = _i7.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i6.VoiceAI]
+class VoiceAIRoute extends _i7.PageRouteInfo<void> {
+  const VoiceAIRoute({List<_i7.PageRouteInfo>? children})
+      : super(
+          VoiceAIRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'VoiceAIRoute';
+
+  static const _i7.PageInfo<void> page = _i7.PageInfo<void>(name);
 }

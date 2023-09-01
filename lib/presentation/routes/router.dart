@@ -15,6 +15,7 @@ class AppRouter extends $AppRouter{
     AutoRoute(page: AuthRoute.page),
     AutoRoute(page: DashBoardRoute.page),
     AutoRoute(page: SqlScreenRoute.page),
+    AutoRoute(page: VoiceAIRoute.page)
 
 
 

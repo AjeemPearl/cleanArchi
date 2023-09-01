@@ -50,6 +50,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "351738778131-ih3hij85dqo2o7pst719q0b6e777lu6i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pearlorginsation.cleanarchi",
+            "certificate_hash": "68fa36d113aa8c8bc5aa0f57fd67778266a2c7db"
+          }
+        },
+        {
           "client_id": "351738778131-tc40d4j28o5pmg6emfpma365356hvaek.apps.googleusercontent.com",
           "client_type": 3
         }

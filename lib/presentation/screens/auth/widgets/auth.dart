@@ -8,6 +8,41 @@ class Auth extends StatefulWidget {
 }
 
 class _AuthState extends State<Auth> {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  Future<void> _sendOTP() async {
+
+
+
+    await _auth.verifyPhoneNumber(
+      phoneNumber: "+916398574171",
+      verificationCompleted: (PhoneAuthCredential credential) async {
+        // You may directly sign in the user here or log the code if needed.
+        EasyLoading.show(status: credential.smsCode);
+        print("Automatic verification: ${credential.smsCode}");
+      },
+      verificationFailed: (FirebaseAuthException e) {
+        EasyLoading.show(status: e.toString());
+        print("Verification failed: ${e.message}");
+      },
+      codeSent: (String verificationId, int? resendToken) {
+        EasyLoading.show(status: resendToken.toString());
+
+        // Store the verificationId in a secure place (e.g., in a StatefulWidget).
+        // You can use it to construct the PhoneAuthCredential in the OtpScreen.
+        print("Verification ID: $verificationId");
+
+        // Navigate to the OTP screen
+      },
+      codeAutoRetrievalTimeout: (String verificationId) {
+        // Auto retrieval timeout
+        EasyLoading.show(status: verificationId.toString());
+
+        print("Auto retrieval timeout: $verificationId");
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return  Container(
@@ -85,6 +120,24 @@ class _AuthState extends State<Auth> {
                       },
                       child: Text(
                         "Sql lite Screen",
+                        style: TextStyle(color: MyColors.whiteColor, fontSize: 5.sp),
+                      )),
+                  10.heightBox,
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          elevation: 10,
+                          shadowColor: MyColors.secondaryColor,
+                          backgroundColor: MyColors.primaryColor,
+                          minimumSize: Size(100.w, 40.h),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.r),
+                          )
+                      ),
+                      onPressed: () async{
+                       await _sendOTP();
+                      },
+                      child: Text(
+                        "Voice Assistant",
                         style: TextStyle(color: MyColors.whiteColor, fontSize: 5.sp),
                       )),
                   30.h.heightBox,
